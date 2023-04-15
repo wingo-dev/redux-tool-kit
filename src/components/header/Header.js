@@ -1,5 +1,6 @@
-import { Grid } from "@mantine/core";
+import { Grid, Button, Badge } from "@mantine/core";
 import "./Header.css";
+
 function Header() {
   return (
     <div className="header-color">
@@ -11,7 +12,17 @@ function Header() {
           <div>menu</div>
         </Grid.Col>
         <Grid.Col span={4}>
-          <div>cart</div>
+          <div>
+            <Button
+              variant="gradient"
+              gradient={{ from: "indigo", to: "cyan" }}
+            >
+              Cart
+            </Button>
+            <Badge variant="gradient" gradient={{ from: "orange", to: "red" }}>
+              0
+            </Badge>
+          </div>
         </Grid.Col>
       </Grid>
     </div>
