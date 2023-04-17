@@ -6,7 +6,7 @@ function Header() {
     <div className="header-color">
       <Grid>
         <Grid.Col span={4}>
-          <img src="" />
+          <img src="" alt="site-logo" />
         </Grid.Col>
         <Grid.Col span={4}>
           <div>menu</div>
