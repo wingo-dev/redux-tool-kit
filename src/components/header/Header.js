@@ -1,7 +1,14 @@
 import { Grid, Button, Badge } from "@mantine/core";
 import "./Header.css";
+import { useDispatch } from "react-redux";
+
+import { uiAction } from "../../store/ui-slice";
 
 function Header() {
+  const dispatch = useDispatch();
+  const cartHandler = () => {
+    dispatch(uiAction.toggle());
+  };
   return (
     <div className="header-color">
       <Grid>
@@ -16,6 +23,7 @@ function Header() {
             <Button
               variant="gradient"
               gradient={{ from: "indigo", to: "cyan" }}
+              onClick={cartHandler}
             >
               Cart
             </Button>

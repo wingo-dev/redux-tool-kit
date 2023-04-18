@@ -1,5 +1,6 @@
 import { useDisclosure } from "@mantine/hooks";
-import { Modal, Group, Button, ScrollArea } from "@mantine/core";
+import { Modal, ScrollArea } from "@mantine/core";
+import { useSelector } from "react-redux";
 
 function Cart() {
   const [opened, { open, close }] = useDisclosure(false);
@@ -8,10 +9,12 @@ function Cart() {
     .fill(0)
     .map((_, index) => <p key={index}>product item</p>);
 
+  const showCart = useSelector((state) => state.ui.cartIsVisible);
+
   return (
     <>
       <Modal
-        opened={opened}
+        opened={showCart && open}
         onClose={close}
         title="Cart Items"
         scrollAreaComponent={ScrollArea.Autosize}
@@ -19,9 +22,9 @@ function Cart() {
         {content}
       </Modal>
 
-      <Group position="center">
+      {/* <Group position="center">
         <Button onClick={open}>Open modal</Button>
-      </Group>
+      </Group> */}
     </>
   );
 }
