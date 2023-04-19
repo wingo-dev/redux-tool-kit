@@ -1,30 +1,64 @@
-import { useDisclosure } from "@mantine/hooks";
-import { Modal, ScrollArea } from "@mantine/core";
-import { useSelector } from "react-redux";
+import "./Cart.css";
 
 function Cart() {
-  const [opened, { open, close }] = useDisclosure(false);
-
-  const content = Array(10)
-    .fill(0)
-    .map((_, index) => <p key={index}>product item</p>);
-
-  const showCart = useSelector((state) => state.ui.cartIsVisible);
-
   return (
     <>
-      <Modal
-        opened={showCart && open}
-        onClose={close}
-        title="Cart Items"
-        scrollAreaComponent={ScrollArea.Autosize}
-      >
-        {content}
-      </Modal>
-
-      {/* <Group position="center">
-        <Button onClick={open}>Open modal</Button>
-      </Group> */}
+      <div className="modal fade" id="shoppingCartModal">
+        <div className="modal-dialog">
+          <div className="modal-content">
+            <div className="modal-header">
+              <h5 className="modal-title">Shopping Cart</h5>
+              <button type="button" className="close" data-dismiss="modal">
+                &times;
+              </button>
+            </div>
+            <div className="modal-body">
+              <table>
+                <thead>
+                  <tr>
+                    <th>Product</th>
+                    <th>Price</th>
+                    <th>Quantity</th>
+                    <th>Subtotal</th>
+                  </tr>
+                </thead>
+                <tbody>
+                  <tr>
+                    <td>Product 1</td>
+                    <td>$10.00</td>
+                    <td>1</td>
+                    <td>$10.00</td>
+                  </tr>
+                  <tr>
+                    <td>Product 2</td>
+                    <td>$20.00</td>
+                    <td>2</td>
+                    <td>$40.00</td>
+                  </tr>
+                </tbody>
+                <tfoot>
+                  <tr>
+                    <td colSpan="3">Total:</td>
+                    <td>$50.00</td>
+                  </tr>
+                </tfoot>
+              </table>
+            </div>
+            <div className="modal-footer">
+              <button
+                type="button"
+                className="btn btn-secondary"
+                data-dismiss="modal"
+              >
+                Close
+              </button>
+              <button type="button" className="btn btn-primary">
+                Checkout
+              </button>
+            </div>
+          </div>
+        </div>
+      </div>
     </>
   );
 }
