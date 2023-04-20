@@ -15,7 +15,6 @@
   .modal-content {
     background-color: #fefefe;
     margin: 10% auto; /* 10% from the top and centered */
-    padding: 20px;
     border: 1px solid #888;
     width: 80%; /* Could be more or less, depending on screen size */
   }
@@ -27,6 +26,8 @@
     color: black;
     border-bottom: 1px solid #ddd;
     font-size: 20px;
+    display: flex;
+    justify-content: space-between;
   }
   
   /* Style for the modal body */
@@ -49,7 +50,6 @@
   
   /* Style for table data cells */
   td {
-    border-bottom: 1px solid #ddd;
     padding: 8px;
   }
   
@@ -58,6 +58,7 @@
     padding: 10px;
     background-color: #f5f5f5;
     border-top: 1px solid #ddd;
+    text-align: end;
   }
   
   /* Style for the checkout button */
@@ -74,10 +75,9 @@
     float: right;
     font-size: 28px;
     font-weight: bold;
-    color: #aaa;
-    text-shadow: 0 1px 0 #fff;
     opacity: 0.5;
     cursor: pointer;
+    border: none;
   }
   
   /* Style for the close button on hover */

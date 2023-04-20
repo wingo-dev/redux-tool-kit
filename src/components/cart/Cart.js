@@ -1,6 +1,12 @@
 import "./Cart.css";
+import { useDispatch } from "react-redux";
+import { uiAction } from "../../store/ui-slice";
 
 function Cart() {
+  const dispatch = useDispatch();
+  const cartHandler = () => {
+    dispatch(uiAction.toggle());
+  };
   return (
     <>
       <div className="modal fade" id="shoppingCartModal">
@@ -8,7 +14,12 @@ function Cart() {
           <div className="modal-content">
             <div className="modal-header">
               <h5 className="modal-title">Shopping Cart</h5>
-              <button type="button" className="close" data-dismiss="modal">
+              <button
+                type="button"
+                className="close"
+                data-dismiss="modal"
+                onClick={cartHandler}
+              >
                 &times;
               </button>
             </div>
@@ -45,13 +56,6 @@ function Cart() {
               </table>
             </div>
             <div className="modal-footer">
-              <button
-                type="button"
-                className="btn btn-secondary"
-                data-dismiss="modal"
-              >
-                Close
-              </button>
               <button type="button" className="btn btn-primary">
                 Checkout
               </button>
