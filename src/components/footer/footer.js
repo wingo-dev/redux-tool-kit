@@ -1,6 +1,8 @@
 function Footer() {
   return (
-    <div>
+    <div
+      style={{ textAlign: "center", backgroundColor: "#000", color: "white" }}
+    >
       <p>@2023-04-15 copyright</p>
     </div>
   );

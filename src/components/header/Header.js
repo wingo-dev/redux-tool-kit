@@ -1,4 +1,3 @@
-import { Grid, Button, Badge } from "@mantine/core";
 import "./Header.css";
 import { useDispatch } from "react-redux";
 
@@ -10,29 +9,18 @@ function Header() {
     dispatch(uiAction.toggle());
   };
   return (
-    <div className="header-color">
-      <Grid>
-        <Grid.Col span={4}>
-          <img src="" alt="site-logo" />
-        </Grid.Col>
-        <Grid.Col span={4}>
-          <div>menu</div>
-        </Grid.Col>
-        <Grid.Col span={4}>
-          <div>
-            <Button
-              variant="gradient"
-              gradient={{ from: "indigo", to: "cyan" }}
-              onClick={cartHandler}
-            >
-              Cart
-            </Button>
-            <Badge variant="gradient" gradient={{ from: "orange", to: "red" }}>
-              0
-            </Badge>
-          </div>
-        </Grid.Col>
-      </Grid>
+    <div className="header-color container">
+      <div className="column">
+        <img src="/img/logo.png" alt="site-logo" style={{ width: 60 }} />
+      </div>
+      <div className="column">
+        <div>menu</div>
+      </div>
+      <div className="column">
+        <button className="cart-button" onClick={cartHandler}>
+          Cart 1
+        </button>
+      </div>
     </div>
   );
 }

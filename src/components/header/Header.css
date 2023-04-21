@@ -1,3 +1,31 @@
 .header-color{
     background-color: blueviolet;
+    display: flex;
+    align-items: center;
 }
+
+.cart-button {
+    background-color: #FFC107;
+    color: #FFF;
+    font-size: 1rem;
+    padding: 0.5rem 1rem;
+    border: none;
+    border-radius: 0.25rem;
+    cursor: pointer;
+    box-shadow: 0px 0px 5px rgba(0, 0, 0, 0.2);
+    transition: all 0.2s ease-in-out;
+  }
+  
+  .cart-button:hover {
+    transform: scale(1.05);
+    box-shadow: 0px 0px 10px rgba(0, 0, 0, 0.2);
+  }
+  .container {
+    display: flex;
+  }
+  
+  .column {
+    flex: 1;
+    padding: 10px;
+    
+  }
