@@ -28,6 +28,8 @@ const ProductItems = () => {
     },
   ];
 
+  const addHandler = () => {};
+
   return (
     <div className="product-list">
       <ul>
@@ -38,7 +40,7 @@ const ProductItems = () => {
               <h2>{product.name}</h2>
               <p>{product.description}</p>
               <h3>${product.price.toFixed(2)}</h3>
-              <button>Add Cart</button>
+              <button onClick={addHandler}>Add Cart</button>
             </div>
           </li>
         ))}
