@@ -2,11 +2,18 @@ import "./Cart.css";
 import { useDispatch } from "react-redux";
 import { uiAction } from "../../store/ui-slice";
 
+import { useSelector } from "react-redux";
+
 function Cart() {
   const dispatch = useDispatch();
   const cartHandler = () => {
     dispatch(uiAction.toggle());
   };
+  const carts = useSelector((state) => {
+    return state.cart;
+  });
+
+  console.log(carts);
   return (
     <>
       <div className="modal fade" id="shoppingCartModal">
