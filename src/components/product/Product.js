@@ -33,7 +33,13 @@ const Product = () => {
   ];
   return (
     <div>
-      <ProductItems products={products} />
+      <div className="product-list">
+        <ul>
+          {products.map((product) => (
+            <ProductItems key={product.id} product={product} />
+          ))}
+        </ul>
+      </div>
     </div>
   );
 };

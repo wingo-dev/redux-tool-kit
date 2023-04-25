@@ -4,33 +4,28 @@ import { cartActions } from "../../store/cart-slice";
 import "./ProductItems.css";
 
 const ProductItems = (props) => {
+  const { id, image, name, description, price } = props.product;
   const dispatch = useDispatch();
-  const addHandler = (product) => {
+  const addHandler = () => {
     dispatch(
       cartActions.addItemToCart({
-        id: product.id,
-        price: product.price,
-        title: product.name,
+        id,
+        price,
+        name,
       })
     );
   };
 
   return (
-    <div className="product-list">
-      <ul>
-        {props.products.map((product) => (
-          <li key={product.id}>
-            <div className="product-item">
-              <img src={product.image} alt={product.name} />
-              <h2>{product.name}</h2>
-              <p>{product.description}</p>
-              <h3>${product.price.toFixed(2)}</h3>
-              <button onClick={addHandler(product)}>Add Cart</button>
-            </div>
-          </li>
-        ))}
-      </ul>
-    </div>
+    <li>
+      <div className="product-item">
+        <img src={image} alt={name} />
+        <h2>{name}</h2>
+        <p>{description}</p>
+        <h3>${price.toFixed(2)}</h3>
+        <button onClick={addHandler}>Add Cart</button>
+      </div>
+    </li>
   );
 };
 

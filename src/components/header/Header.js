@@ -2,9 +2,11 @@ import "./Header.css";
 import { useDispatch } from "react-redux";
 
 import { uiAction } from "../../store/ui-slice";
+import { useSelector } from "react-redux";
 
 function Header() {
   const dispatch = useDispatch();
+  const totalQuantity = useSelector((state) => state.cart.totalQuantity);
   const cartHandler = () => {
     dispatch(uiAction.toggle());
   };
@@ -18,7 +20,7 @@ function Header() {
       </div>
       <div className="column">
         <button className="cart-button" onClick={cartHandler}>
-          Cart 1
+          Cart {totalQuantity}
         </button>
       </div>
     </div>
