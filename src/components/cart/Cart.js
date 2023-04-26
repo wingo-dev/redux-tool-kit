@@ -4,13 +4,15 @@ import { uiAction } from "../../store/ui-slice";
 
 import { useSelector } from "react-redux";
 
+import CartItem from "./CartItem";
+
 function Cart() {
   const dispatch = useDispatch();
   const cartHandler = () => {
     dispatch(uiAction.toggle());
   };
   const carts = useSelector((state) => {
-    return state.cart;
+    return state.cart.items;
   });
 
   console.log(carts);
@@ -40,20 +42,8 @@ function Cart() {
                     <th>Subtotal</th>
                   </tr>
                 </thead>
-                <tbody>
-                  <tr>
-                    <td>Product 1</td>
-                    <td>$10.00</td>
-                    <td>1</td>
-                    <td>$10.00</td>
-                  </tr>
-                  <tr>
-                    <td>Product 2</td>
-                    <td>$20.00</td>
-                    <td>2</td>
-                    <td>$40.00</td>
-                  </tr>
-                </tbody>
+                {carts &&
+                  carts.map((cart) => <CartItem key={cart.id} cart={cart} />)}
                 <tfoot>
                   <tr>
                     <td colSpan="3">Total:</td>
