@@ -14,6 +14,9 @@ function Cart() {
   const carts = useSelector((state) => {
     return state.cart.items;
   });
+  const totalAmount = useSelector((state) => {
+    return state.cart.totalAmount;
+  });
 
   console.log(carts);
   return (
@@ -47,7 +50,7 @@ function Cart() {
                 <tfoot>
                   <tr>
                     <td colSpan="3">Total:</td>
-                    <td>$50.00</td>
+                    <td>${totalAmount}</td>
                   </tr>
                 </tfoot>
               </table>

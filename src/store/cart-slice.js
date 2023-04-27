@@ -21,10 +21,12 @@ const cartSlice = createSlice({
           totalPrice: newItem.price,
           name: newItem.name,
         });
+        state.totalAmount = state.totalAmount + newItem.price;
       } else {
-        existingItem.quantity = existingItem.quantity++;
-        state.totalAmount = existingItem.quantity;
-        // totalPrice = totalPrice + newItem.price;
+        existingItem.quantity = existingItem.quantity + 1;
+        existingItem.totalPrice = existingItem.totalPrice + newItem.price;
+
+        state.totalAmount = state.totalAmount + existingItem.price;
       }
     },
     removeItemFromCart(state, action) {

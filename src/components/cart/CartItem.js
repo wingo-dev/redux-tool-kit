@@ -1,18 +1,13 @@
 const CartItem = (props) => {
+  const cartItem = props.cart;
   return (
     <>
       <tbody>
         <tr>
-          <td>Product 1</td>
-          <td>$10.00</td>
-          <td>1</td>
-          <td>$10.00</td>
-        </tr>
-        <tr>
-          <td>Product 2</td>
-          <td>$20.00</td>
-          <td>2</td>
-          <td>$40.00</td>
+          <td>{cartItem.name}</td>
+          <td>${cartItem.price}</td>
+          <td>{cartItem.quantity}</td>
+          <td>${cartItem.totalPrice}</td>
         </tr>
       </tbody>
     </>
