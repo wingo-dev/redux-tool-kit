@@ -31,12 +31,14 @@ const cartSlice = createSlice({
     },
     removeItemFromCart(state, action) {
       const id = action.payload;
-      const existingItem = state.items.find((item) => item.id === id);
-      if (existingItem.quantity === 1) {
-        state.items = state.items.filter((item) => item.id !== id);
+      // const existingItem = state.items.find((item) => item.id === id);
+      console.log(id);
+      console.log(state);
+      if (state.items.quantity === 1) {
+        // state.items = state.items.filter((item) => item.id !== id);
       } else {
-        existingItem.quantity--;
-        existingItem.totalPrice = existingItem.totalPrice - existingItem.price;
+        // existingItem.quantity--;
+        // existingItem.totalPrice = existingItem.totalPrice - existingItem.price;
       }
     },
   },

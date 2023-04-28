@@ -88,4 +88,20 @@
     cursor: pointer;
     opacity: 0.8;
   }
+  .quantity {
+    display: flex;
+    align-items: center;
+  }
   
+  .quantity-btn {
+    padding: 5px 10px;
+    background-color: #eee;
+    border: none;
+    cursor: pointer;
+  }
+  
+  .quantity-input {
+    width: 50px;
+    padding: 5px;
+    text-align: center;
+  }
