@@ -17,8 +17,6 @@ function Cart() {
   const totalAmount = useSelector((state) => {
     return state.cart.totalAmount;
   });
-
-  console.log(carts);
   return (
     <>
       <div className="modal fade" id="shoppingCartModal">

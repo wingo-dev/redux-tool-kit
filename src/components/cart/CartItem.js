@@ -4,7 +4,7 @@ import { cartActions } from "../../store/cart-slice";
 const CartItem = (props) => {
   const { id, name, totalPrice, price, quantity } = props.cart;
   const dispatch = useDispatch();
-
+  console.log(props.cart);
   const addCart = () => {
     dispatch(
       cartActions.addItemToCart({
@@ -17,11 +17,7 @@ const CartItem = (props) => {
 
   const removeCart = () => {
     // console.log(props.cart);
-    dispatch(
-      cartActions.removeItemFromCart({
-        id,
-      })
-    );
+    dispatch(cartActions.removeItemFromCart(id));
   };
 
   return (
