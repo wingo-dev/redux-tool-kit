@@ -48,7 +48,7 @@ function Cart() {
                 <tfoot>
                   <tr>
                     <td colSpan="3">Total:</td>
-                    <td>${totalAmount}</td>
+                    <td>${totalAmount.toFixed(2)}</td>
                   </tr>
                 </tfoot>
               </table>

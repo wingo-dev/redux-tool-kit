@@ -25,7 +25,7 @@ const CartItem = (props) => {
       <tbody>
         <tr>
           <td>{name}</td>
-          <td>${price}</td>
+          <td>${price.toFixed(2)}</td>
           <td>
             <div className="quantity">
               <button className="quantity-btn" onClick={removeCart}>
@@ -37,7 +37,7 @@ const CartItem = (props) => {
               </button>
             </div>
           </td>
-          <td>${totalPrice}</td>
+          <td>${totalPrice.toFixed(2)}</td>
         </tr>
       </tbody>
     </>
