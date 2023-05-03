@@ -30,6 +30,48 @@ const Product = () => {
       price: 49.99,
       image: "/img/product.jpeg",
     },
+    {
+      id: "5",
+      name: "Product 5",
+      description: "Description for product 5",
+      price: 59.66,
+      image: "/img/product.jpeg",
+    },
+    {
+      id: "6",
+      name: "Product 6",
+      description: "Description for product 6",
+      price: 22.59,
+      image: "/img/product.jpeg",
+    },
+    {
+      id: "7",
+      name: "Product 7",
+      description: "Description for product 7",
+      price: 69.99,
+      image: "/img/product.jpeg",
+    },
+    {
+      id: "8",
+      name: "Product 8",
+      description: "Description for product 8",
+      price: 29.99,
+      image: "/img/product.jpeg",
+    },
+    {
+      id: "9",
+      name: "Product 9",
+      description: "Description for product 9",
+      price: 49.99,
+      image: "/img/product.jpeg",
+    },
+    {
+      id: "10",
+      name: "Product 10",
+      description: "Description for product 10",
+      price: 49.99,
+      image: "/img/product.jpeg",
+    },
   ];
   return (
     <div>

@@ -1,8 +1,7 @@
+import "./Footer.css";
 function Footer() {
   return (
-    <div
-      style={{ textAlign: "center", backgroundColor: "#000", color: "white" }}
-    >
+    <div className="footer">
       <p>@2023-04-15 copyright</p>
     </div>
   );
