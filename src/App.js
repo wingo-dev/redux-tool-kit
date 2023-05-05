@@ -1,4 +1,5 @@
 import Header from "./components/header/Header";
+import Notification from "./components/cart/Notification";
 import Footer from "./components/footer/Footer";
 import Cart from "./components/cart/Cart";
 import Product from "./components/product/Product";
@@ -19,6 +20,11 @@ function App() {
 
   return (
     <div>
+      <Notification
+        status={"success"}
+        title={"success"}
+        message={"successfully"}
+      />
       <Header></Header>
       {showCart && <Cart />}
       <Product />
