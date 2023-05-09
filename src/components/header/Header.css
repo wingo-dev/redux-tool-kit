@@ -30,3 +30,9 @@
     padding: 10px;
     
   }
+  ul a{
+    color: white;
+    font-weight: bold;
+    padding: 10px;
+    text-decoration: none;
+  }

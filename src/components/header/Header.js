@@ -3,6 +3,7 @@ import { useDispatch } from "react-redux";
 
 import { uiAction } from "../../store/ui-slice";
 import { useSelector } from "react-redux";
+import { Link } from "react-router-dom";
 
 function Header() {
   const dispatch = useDispatch();
@@ -13,10 +14,17 @@ function Header() {
   return (
     <div className="header-color container">
       <div className="column">
-        <img src="/img/logo.png" alt="site-logo" style={{ width: 60 }} />
+        <Link to={"/"}>
+          <img src="/img/logo.png" alt="site-logo" style={{ width: 60 }} />
+        </Link>
       </div>
       <div className="column">
-        <div>menu</div>
+        <div>
+          <ul>
+            <Link to={"/"}>Home</Link>
+            <Link to={"/shop"}>Shop</Link>
+          </ul>
+        </div>
       </div>
       <div className="column">
         <button className="cart-button" onClick={cartHandler}>
