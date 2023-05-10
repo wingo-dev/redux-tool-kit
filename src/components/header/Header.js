@@ -3,7 +3,7 @@ import { useDispatch } from "react-redux";
 
 import { uiAction } from "../../store/ui-slice";
 import { useSelector } from "react-redux";
-import { Link } from "react-router-dom";
+import { NavLink } from "react-router-dom";
 
 function Header() {
   const dispatch = useDispatch();
@@ -14,15 +14,25 @@ function Header() {
   return (
     <div className="header-color container">
       <div className="column">
-        <Link to={"/"}>
+        <NavLink to={"/"}>
           <img src="/img/logo.png" alt="site-logo" style={{ width: 60 }} />
-        </Link>
+        </NavLink>
       </div>
       <div className="column">
         <div>
           <ul>
-            <Link to={"/"}>Home</Link>
-            <Link to={"/shop"}>Shop</Link>
+            <NavLink
+              to={"/"}
+              className={({ isActive }) => (isActive ? "active" : "")}
+            >
+              Home
+            </NavLink>
+            <NavLink
+              to={"/shop"}
+              className={({ isActive }) => (isActive ? "active" : "")}
+            >
+              Shop
+            </NavLink>
           </ul>
         </div>
       </div>

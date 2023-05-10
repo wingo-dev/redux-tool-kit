@@ -36,3 +36,8 @@
     padding: 10px;
     text-decoration: none;
   }
+  ul a:hover,
+  ul a.active
+  {
+    color: #FFC107;
+  }
