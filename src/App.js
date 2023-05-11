@@ -5,6 +5,7 @@ import { useSelector } from "react-redux";
 import HomePage from "./pages/Home";
 import ShopPage from "./pages/Shop";
 import RootLayouts from "./pages/Root";
+import EorrorPage from "./pages/Error";
 
 function App() {
   const notification = useSelector((state) => state.ui.notification);
@@ -14,8 +15,9 @@ function App() {
     {
       path: "/",
       element: <RootLayouts />,
+      errorElement: <EorrorPage />,
       children: [
-        { path: "/", element: <HomePage /> },
+        { index: true, path: "/", element: <HomePage /> },
         {
           path: "/shop",
           element: <ShopPage />,
