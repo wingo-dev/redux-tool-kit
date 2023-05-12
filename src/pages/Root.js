@@ -7,16 +7,18 @@ import Cart from "../components/cart/Cart";
 
 import Header from "../components/header/Header";
 import Footer from "../components/footer/Footer";
+import Notification from "../components/cart/Notification";
 
 let showNotyFlag = true;
 function RootLayouts() {
+  const notification = useSelector((state) => state.ui.notification);
   const dispatch = useDispatch();
   const cart = useSelector((state) => state.cart);
   const showCart = useSelector((state) => state.ui.cartIsVisible);
 
-  const cartdata = useSelector((state) => {
-    return state.cart;
-  });
+  // const cartdata = useSelector((state) => {
+  //   return state.cart;
+  // });
 
   useEffect(() => {
     dispatch(getCartData());
@@ -32,6 +34,13 @@ function RootLayouts() {
   }, [cart, dispatch]);
   return (
     <>
+      {notification && (
+        <Notification
+          status={notification.status}
+          title={notification.title}
+          message={notification.message}
+        />
+      )}
       <Header />
       {showCart && <Cart />}
       <Outlet />
