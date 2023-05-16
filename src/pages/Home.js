@@ -16,12 +16,14 @@ const HomePage = () => {
         <source src="/bg_video.mp4" type="video/mp4" />
       </video>
       <div className="image-overlay"></div>
-      <div className="hero-title">
-        {words.map((word, index) => (
-          <span key={index} className="hero-word">
-            {word}
-          </span>
-        ))}
+      <div className="animation-word">
+        <div className="hero-title">
+          {words.map((word, index) => (
+            <span key={index} className="hero-word">
+              {word}
+            </span>
+          ))}
+        </div>
       </div>
     </div>
   );
