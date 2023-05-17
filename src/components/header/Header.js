@@ -33,6 +33,12 @@ function Header() {
             >
               Shop
             </NavLink>
+            <NavLink
+              to={"/auth"}
+              className={({ isActive }) => (isActive ? "active" : "")}
+            >
+              Login
+            </NavLink>
           </ul>
         </div>
       </div>
