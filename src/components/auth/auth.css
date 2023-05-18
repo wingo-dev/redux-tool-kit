@@ -24,18 +24,23 @@
     margin-bottom: 10px;
     border: 1px solid #ccc;
     border-radius: 4px;
+    box-sizing: border-box;
   }
   
-  .login-form button[type='submit'] {
+  .login-form a {
     width: 100%;
     padding: 10px;
     background-color: #4caf50;
     color: #fff;
     border: none;
     border-radius: 4px;
+    text-decoration-line: none;
     cursor: pointer;
   }
   
-  .login-form button[type='submit']:hover {
+  .login-form a:hover {
     background-color: #45a049;
   }
+  form.login-form div {
+    margin: 10px;
+}
