@@ -4,7 +4,7 @@ import HomePage from "./pages/Home";
 import ShopPage from "./pages/Shop";
 import RootLayouts from "./pages/Root";
 import EorrorPage from "./pages/Error";
-import AuthPage from "./pages/Auth";
+import AuthPage, { action as authAction } from "./pages/Auth";
 
 function App() {
   // console.log(cartdata);
@@ -23,6 +23,7 @@ function App() {
         {
           path: "/auth",
           element: <AuthPage />,
+          action: authAction,
         },
       ],
     },

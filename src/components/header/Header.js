@@ -34,7 +34,7 @@ function Header() {
               Shop
             </NavLink>
             <NavLink
-              to={"/auth"}
+              to={"/auth?mode=login"}
               className={({ isActive }) => (isActive ? "active" : "")}
             >
               Login
